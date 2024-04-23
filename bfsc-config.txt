@@ -1,0 +1,5 @@
+askToClearGen:1
+indentationChar: 
+indentationSize:2
+defaultFuncFile:base
+defaultBFScriptFile:?

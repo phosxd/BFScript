@@ -1,0 +1,112 @@
+# This is a showcase of every element within BFScript.
+  There is no practical use for this script, this should
+          only be used as a reference.                 ;
+
+
+#Variables
+---------;
+var v1 = 1;
+var v1 = v1;
+var v2 += 1;
+var v2 += v2;
+var v3 = 5;
+var v3 -= 1;
+var v3 -= v3;
+var v4 = 5;
+var v4 *= v4;
+var v5 = 5;
+var v5 /= v5;
+var v6 ?= 1 9;
+var v6 ?= 0 999999999;
+var v7 = 1;
+del v7;
+
+
+#Logging
+-------;
+var l1 = 1;
+log l1;
+log 'Some regular text';
+del l1;
+log l1;
+
+
+#Conditions
+----------;
+var c1 ?= 1 2;
+if c1 is 1;
+  #...;
+if c1 is 2;
+  #...;
+var c2 = 5;
+var c2-1 = 10;
+if c2 is 5;  #...;
+if c2 isnt 5;  #...;
+if c2 = 5;  #...;
+if c2 == 5;  #...;
+if c2 != 5;  #...;
+if c2 > c2-1;  #...;
+if c2 >= c2-1;  #...;
+if c2 >= 10;  #...;
+if c2 < c2-1;  #...;
+if c2 <= c2-1;  #...;
+if c2 <= 10;  #...;
+if c2 !> c2-1;  #...;
+if c2 !>= 10;   #...;
+if c2 !>= c2-1;   #...;
+if c2 !< c2-1;  #...;
+if c2 !<= 10;  #...;
+if c2 !<= c2-1;  #...;
+
+
+#Commands & Statement Modifiers
+------------------------------;
+cmd 'say running a command O:';
+stm 'as @a';
+  cmd 'say running this command on all players O:';
+stm 'at @a';
+  cmd 'setblock ~~-1~ stone';
+  cmd 'say everyone is standing on stone now O:';
+stm 'as @a at @s unless entity @e[r=1,type=chicken]';
+  cmd 'summon chicken';
+  cmd 'scoreboard players add @s chickens 1';
+stm 'as @p';
+  stm 'at @s';
+    cmd 'say nested statement modifiers O:';
+
+
+#Functions & Loops
+-----------------;
+func f1;
+  cmd 'say ran function "f1" O:';
+  var f1 += 1;
+cmd 'function f1';
+#Functions can be called even before being defined.
+   This works because "func" is a compiler-level
+     statement, just like the "log" statement.;
+cmd 'function f2';
+func f2;  #...;
+
+loop l1;
+  cmd 'say infinite loops like this will crash the game!';
+loop l2;
+  var l2Timer += 1;
+  cmd 'say I will say this 10 times';
+  if l2Timer >= 10;  break;
+
+# You can re-use loops!
+  This is important as everytime a loop
+  is created a new function is created.;
+var doReloop = 1;
+if doReloop is 1;
+  reloop l2;
+  var doReloop = 0;
+
+
+
+
+log '
+
+Script compiled with no errors O:
+
+';
