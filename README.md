@@ -1,3 +1,3 @@
 Join Discord: https://dsc.gg/bfscript
 
-Read Docs: https://
+Read Docs: https://aspiro.gitbook.io/bfscript/
